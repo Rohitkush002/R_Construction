@@ -1,0 +1,60 @@
+{% extends 'includes/base.html'%}
+{% block extracss %}
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="bg-light">
+
+    <div class="container">
+        <div class="row emp_box">
+            <div class=" text-left">
+                <a href="{% url 'activeVehicle' %}" class="btn btn-primary pull-right">Add</a>
+
+
+                <h2>Active Vehicle List</h2>
+
+                <div class="four-grids row ">
+
+
+                    <div class="table">
+                        <table class="table table-bordered">
+                            <tr class="header header bg-info text-white">
+                                <th>No</th>
+                                <th>Vehicle No</th>
+                                <th>Delete </th>
+
+
+                            </tr>
+
+                            {% for worklist in wl %}
+
+
+                            <tr>
+                                <th>{{ forloop.counter}}</th>
+                                <td><a href="{% url 'activeVehicle' vehicleList.VehicleNo %}">{{activelist.VehicleNo}}</a></td>
+                                <td><a class="btn1"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
+
+                            </tr>
+
+
+                            {% endfor %}
+
+                        </table>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

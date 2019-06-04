@@ -1,0 +1,50 @@
+{% extends 'includes/base.html'%}
+{% block extracss %}
+{% endblock %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+
+{% block content %}
+
+{% include 'includes/sidebar.html' %}
+
+<section>
+
+    <div class="container">
+
+        <div class="emp_box">
+
+
+            <div class="SignupForm panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Employee</h4>
+                </div>
+                <div class="panel-body">
+
+                    <form action="" method="post" class="">
+                        {% csrf_token %}
+
+                        <table class="table">
+                            {{form.as_table}}
+                        </table>
+
+
+                        <div class="clearfix">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                            <a href="{% url 'empList' %}" class="btn btn-primary float-right">Cancel</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock %}

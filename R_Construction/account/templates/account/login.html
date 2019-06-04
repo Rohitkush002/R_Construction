@@ -1,0 +1,35 @@
+{% extends 'includes/base.html' %}
+
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="main-wthree">
+    <div class="container">
+        <div class="sin-w3-agile">
+            <h2>Login</h2>
+            <form action="#" method="post">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    {{form}}
+                </div>
+                <div>
+                    <input type="submit" class="login" value="Login">
+                     <a href="{% url 'signup' %}" class="new-account">Create New Account</a>
+                </div>
+                <div class="clearfix"></div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

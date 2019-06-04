@@ -1,0 +1,46 @@
+{% extends 'includes/base.html'%}
+
+
+
+{% block title %}
+<title>Update</title>
+{% endblock %}
+
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<section>
+    <h1 class="text-center">Update Vehicle Data </h1>
+    <div class="container">
+
+        <div class="container">
+            <div class="col-md-8">
+
+            </div>
+            <div class="SignupForm panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Vehicle</h4>
+                </div>
+                <div class="panel-body">
+
+                    <form action="" method="post" class="">
+                        {% csrf_token %}
+
+                        <table class="table">
+                            {{form.as_table}}
+                        </table>
+
+                        <div class="clearfix">
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <a href="{% url 'vehicleList' %}" class="btn btn-primary float-right">Cancel</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

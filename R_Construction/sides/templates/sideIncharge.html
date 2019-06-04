@@ -1,0 +1,45 @@
+{% extends 'includes/base.html'%}
+
+
+{% block title %}
+<title>SideIncharge</title>
+{% endblock %}
+
+
+{% block content %}
+
+<section>
+
+    <div class="container">
+
+        <div class="emp_box">
+
+
+            <div class="SignupForm panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Side Incharge</h4>
+                </div>
+                <div class="panel-body">
+
+                    <form action="" method="post" class="">
+                        {% csrf_token %}
+                        <table class="table">
+                            {{form.as_table}}
+                        </table>
+
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <a href="{% url 'sideList' %}" class="btn btn-primary float-right">Cancel</a>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock %}

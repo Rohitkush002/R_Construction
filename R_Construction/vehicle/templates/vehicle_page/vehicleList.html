@@ -1,0 +1,63 @@
+{% extends 'includes/base.html'%}
+{% block extracss %}
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="bg-light">
+
+    <div class="container">
+        <div class="row emp_box">
+
+
+            <div class=" text-left">
+                <a href="{% url 'vehicle' %}" class="btn btn-primary pull-right">Add Vehicle</a>
+
+                <h2>Vehicle List</h2>
+
+
+                <div class="four-grids row ">
+
+
+                    <div class="">
+                        <table class="table table-bordered">
+                            <tr class="header header bg-info text-white">
+                                <th>No</th>
+                                <th>VehicleNo</th>
+                                <th>VriverName</th>
+                                <th>fuelType</th>
+                                <th>Alloted Side</th>
+                                <th>Delete</th>
+                                <th>Edit</th>
+                            </tr>
+
+                            {% for vehiclelist in vl %}
+
+
+                            <tr>
+                                <th>{{ forloop.counter}}</th>
+                                <td>{{vehiclelist.VehicleNo}}</td>
+                                <td>{{vehiclelist.driverName}}</td>
+                                <td>{{vehiclelist.fuelType}}</td>
+                                <td>{{vehiclelist.allotedSideName}}</td>
+                                <td><a><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                <td><a href="{% url 'update_vehicle' vehiclelist.pk %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                            </tr>
+
+                            {% endfor %}
+
+                        </table>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'includes/base.html'%}
+{% block extracss %}
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+<div class="bg-light">
+
+    <div class="container">
+        <div class="row emp_box">
+            <div class=" text-left">
+                <a href="{% url 'work' %}" class="btn btn-primary pull-right">Add</a>
+
+
+                <h2>Working Side List</h2>
+
+                <div class="four-grids row ">
+
+
+                    <div class="table">
+                        <table class="table table-bordered">
+                            <tr class="header header bg-info text-white">
+                                <th>No</th>
+                                <th>Side Name</th>
+                                <th>Delete</th>
+
+
+                            </tr>
+
+                            {% for worklist in wl %}
+
+
+                            <tr>
+                                <th>{{ forloop.counter}}</th>
+                                <td><a href="{% url 'workingSide' worklist.SideName %}">{{ worklist.SideName }}</a></td>
+                                <td><a class="btn1"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
+
+                            </tr>
+                            <!--<div class="box">-->
+                            <!--<form action="" method="POST">-->
+
+                            <!--{% csrf_token %}-->
+                            <!--<h3>Do You Want To Delete This Record</h3>-->
+                            <!--<a href="{% url 'delete_work' worklist.pk %}"-->
+                            <!--class="btn btn-danger float-right">Done</a>-->
+                            <!--<a href="{% url 'workList' %}" class="btn btn-primary float-right">Cancel</a>-->
+                            <!--</form>-->
+                            <!--</div>-->
+
+                            {% endfor %}
+
+                        </table>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--$(".btn1").click(function(){-->
+
+<!--$(".box").slideToggle();-->
+<!--});-->
+<!--});-->
+
+
+<!--</script>-->
+
+
+{% endblock %}

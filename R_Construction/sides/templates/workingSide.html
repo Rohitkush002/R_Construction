@@ -1,0 +1,66 @@
+{% extends 'includes/base.html'%}
+{% block extracss %}
+
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% include 'includes/sidebar.html' %}
+
+<div class="bg-light">
+
+    <div class="container">
+        <div class="row emp_box">
+
+
+            <div class=" text-left">
+
+                <h2>Sides List</h2>
+
+                <div class="four-grids row ">
+
+
+                    <div class="table">
+                        <table class="table table-bordered">
+                            <tr class="header header bg-info text-white">
+
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Incharge</th>
+                                <th>Vehicles</th>
+                                <th>Employee</th>
+                                <th>Active Vehicle</th>
+
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td>{{sidelist.sideName}}</td>
+                                <td>{{sidelist.sideAdd}}</td>
+                                <td>{{sidelist.sideIncharge}}</td>
+                                <td>{{sidelist.vehicles}}</td>
+                                <td>{{sidelist.employee}}</td>
+                                <td><a href="">{{sidelist.activeVehicle}}</a></td>
+
+
+                            </tr>
+
+
+                        </table>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
